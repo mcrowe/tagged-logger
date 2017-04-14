@@ -1,5 +1,5 @@
 {
-  "name": "@mcrowe/todo",
+  "name": "@mcrowe/tagged-logger",
   "version": "0.0.1",
   "description": "Simple tagged logger for Typescript and Javascript",
   "author": "Mitch Crowe <code@mitchcrowe.com> (http://www.mitchcrowe.com)",

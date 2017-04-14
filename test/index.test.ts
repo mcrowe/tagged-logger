@@ -1,10 +1,14 @@
 import assert = require('assert')
-import doSomething from '../src'
+import Logger from '../src'
 
 
 suite('index', () => {})
 
 
-test('index', () => {
-  assert.equal(5, doSomething(1))
+test('basic usage', () => {
+  const tags = ['simple', '%t', () => 'thunk']
+  const logger = new Logger('info', tags)
+  logger.info('info')
+  logger.debug('debug')
+  logger.error('error')
 })
