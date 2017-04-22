@@ -6,7 +6,7 @@ suite('index', () => {})
 
 
 test('basic usage', () => {
-  const tags = ['simple', '%t', () => 'thunk']
+  const tags = ['simple', '%t', '%l', () => 'thunk']
   const logger = new Logger('info', tags)
   logger.info('info')
   logger.debug('debug')
