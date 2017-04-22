@@ -50,30 +50,31 @@ class TaggedLogger {
 
   log(level, ...args) {
     if (level >= this.level) {
-      console.log(this.formatTags(), ...args)
+      console.log(this.formatTags(level), ...args)
     }
   }
 
-  formatTags() {
-    return this.tags.map(this.formatTag).join(' ')
+  formatTags(level: number): string {
+    return this.tags.map(t => this.formatTag(t, level)).join(' ')
   }
 
-  formatTag(tag) {
-    return '[' + this.getTagValue(tag) + ']'
+  formatTag(tag: Tag, level: number): string {
+    return '[' + this.getTagValue(tag, level) + ']'
   }
 
-  getTagValue(tag) {
+  getTagValue(tag: Tag, level: number) {
     const type = typeof tag
 
     switch (type) {
       case 'function':
-        return tag()
+        const fn = tag as Stringer
+        return fn()
       case 'string':
         switch (tag) {
           case '%t':
             return Util.simpleTimestamp(new Date())
           case '%l':
-            return LEVEL_NAMES[this.level].toString()
+            return LEVEL_NAMES[level].toString()
           default:
             return tag
         }
