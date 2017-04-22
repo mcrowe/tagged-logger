@@ -9,8 +9,8 @@ declare class TaggedLogger {
     info(...args: any[]): void;
     error(...args: any[]): void;
     log(level: any, ...args: any[]): void;
-    formatTags(): string;
-    formatTag(tag: any): string;
-    getTagValue(tag: any): any;
+    formatTags(level: number): string;
+    formatTag(tag: Tag, level: number): string;
+    getTagValue(tag: Tag, level: number): any;
 }
 export default TaggedLogger;

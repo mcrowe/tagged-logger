@@ -1,6 +1,6 @@
 {
   "name": "@mcrowe/tagged-logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple tagged logger for Typescript and Javascript",
   "author": "Mitch Crowe <code@mitchcrowe.com> (http://www.mitchcrowe.com)",
   "license": "ISC",
