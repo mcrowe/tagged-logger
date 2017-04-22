@@ -4,7 +4,7 @@ export declare type Tag = string | Stringer;
 declare class TaggedLogger {
     level: number;
     tags: Tag[];
-    constructor(level: LevelName, tags?: Tag[]);
+    constructor(levelName: LevelName, tags?: Tag[]);
     debug(...args: any[]): void;
     info(...args: any[]): void;
     error(...args: any[]): void;
